@@ -4,19 +4,19 @@ description: "Privacy policy of FlorisBoard explaining the access and use of you
 lastmod: "2022-08-25"
 ---
 
-FlorisBoard (the "Project") is a privacy-respecting open-source keyboard primarily developed and maintained by Patrick Goldinger ([@patrickgold](https://github.com/patrickgold)), together with the amazing support of this Project's community. This privacy policy exists to give you a better understanding what personal data must be accessed and/or collected at a minimum to even provide you with a keyboard service.
+FlorisBoard (the "Project") is a privacy-respecting open-source keyboard primarily developed and maintained by Patrick Goldinger ([@patrickgold](https://github.com/patrickgold)), together with the amazing support of this Project's community. This privacy policy exists to give you a better understanding what personal data must be accessed and/or locally stored at a minimum to even provide you with a keyboard service.
 
-## Data collection and usage
+## Data access and usage
 
-This Project's core commitment is to access and collect as little personal data as possible while still delivering a good personalized experience. Any personal data that is accessed, processed or collected is stored locally either in-memory or in the private app data directory and is **never** shared with anyone.
+This Project's core commitment is to access and store as little personal data as possible while still delivering a good personalized experience. Any personal data that is accessed or stored is exclusively kept locally either in-memory or in the private app data directory and is **never** shared with anyone.
 
-### What personal data does FlorisBoard access and process?
+### What personal data does FlorisBoard access and why?
 
-Any time you focus a text field and FlorisBoard is the default input method editor (the "IME"), FlorisBoard has access to the full contents of that text field. It will monitor and store a small window around the cursor in-memory to keep track of the current state and to improve performance. Additionally as a default IME FlorisBoard has access to the system clipboard and actively keeps track of the latest primary clipboard item. Furthermore FlorisBoard has access to the system user dictionary, only reading the actual contents though if either spell checking, suggestions or glide typing is enabled.
+Any time you focus a text field and FlorisBoard is the default input method editor (the "IME"), FlorisBoard has access to the full contents of that text field. It will monitor and store a small window around the cursor in-memory to keep track of the current state and to improve performance. Additionally as a default IME FlorisBoard has access to the system clipboard and actively keeps track of the latest primary clipboard item to privide you with clipboard features. Furthermore FlorisBoard has access to the system user dictionary, only reading the actual contents though if either spell checking, suggestions or glide typing is enabled.
 
-Unless otherwise stated in the next section, any processed personal data is only stored temporarily in-memory and will get discarded once the text field looses focus or once the keyboard process ends.
+Unless otherwise stated in the next section, any accessed personal data is only stored temporarily in-memory and will get discarded once the text field looses focus or once the keyboard process ends.
 
-### What personal data does FlorisBoard collect and why?
+### What personal data does FlorisBoard store and why?
 
 Some features require personal data to be persisted locally on-disk in order to be reused later on. This applies to:
 
@@ -25,9 +25,9 @@ Some features require personal data to be persisted locally on-disk in order to 
 - **Clipboard history**  
   To be able to store and show multiple clipboard items FlorisBoard stores clipboard items in a local database. The database is only maintained and used if the clipboard history feature is enabled.
 
-### Does any of the collected data above leave the device?
+### Does any of the stored personal data leave the device?
 
-No. Any personal data that is collected is stored locally and **never** leaves your device.
+No. Any personal data that is persisted is stored locally and **never** leaves your device.
 
 ## Other
 
