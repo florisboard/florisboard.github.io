@@ -1,0 +1,10 @@
+baseURL = "https://florisboard.org/"
+languageCode = "en-US"
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+assetDir = "src"
+enableRobotsTXT = true
+
+title = "FlorisBoard"
+
+[params]
+description = "An open-source keyboard for Android which respects your privacy. Currently in early-beta."

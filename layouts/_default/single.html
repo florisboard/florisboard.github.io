@@ -1,0 +1,5 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ with .Lastmod }}<p class="last-modified">Last modified: {{ . | time.Format ":date_medium" }}</p>{{ end }}
+{{ .Content }}
+{{ end }}
