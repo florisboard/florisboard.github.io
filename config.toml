@@ -1,10 +1,18 @@
 baseURL = "https://florisboard.org/"
-languageCode = "en-US"
+defaultContentLanguage = 'en'
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 assetDir = "src"
 enableRobotsTXT = true
 
 title = "FlorisBoard"
 
-[params]
-description = "An open-source keyboard for Android which respects your privacy. Currently in early-beta."
+
+[languages]
+    [languages.en]
+        description = "An open-source keyboard for Android which respects your privacy. Currently in early-beta."
+        weight = 1
+        languageCode = "en-US"
+    [languages.es]
+        description = "Un teclado libre para Android que respeta tu privacidad. Actualmente en beta temprana."
+        weight = 2
+        languageCode = "es-ES"
