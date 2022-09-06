@@ -12,7 +12,11 @@ title = "FlorisBoard"
         description = "An open-source keyboard for Android which respects your privacy. Currently in early-beta."
         weight = 1
         languageCode = "en-US"
+        gh-repo = "Visit GitHub repo"
+        privacy = "Privacy Policy"
     [languages.es]
         description = "Un teclado libre para Android que respeta tu privacidad. Actualmente en beta temprana."
         weight = 2
         languageCode = "es-ES"
+        gh-repo = "Visitar el repositorio de GitHub"
+        privacy = "Política de privacidad"
