@@ -1,0 +1,7 @@
+contentDir = 'content/en'
+description = "An open-source keyboard for Android which respects your privacy. Currently in early-beta."
+weight = 1
+languageCode = "en-US"
+gh-repo = "Visit GitHub repo"
+privacy = "Privacy Policy"
+not-found = "The requested resource could not be found. Please check the address and try again."

@@ -1,0 +1,7 @@
+contentDir = 'content/es'
+description = "Un teclado libre para Android que respeta tu privacidad. Actualmente en beta temprana."
+weight = 2
+languageCode = "es-ES"
+gh-repo = "Visitar el repositorio de GitHub"
+privacy = "Política de privacidad"
+not-found = "No se pudo encontrar el recurso solicitado. Por favor, comprueba la dirección y prueba otra vez."
