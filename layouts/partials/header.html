@@ -5,11 +5,11 @@
     </a>
     <div>
         <nav id="lang-select">
-            <label for="lang" id="lang-label"><span>{{ $.Site.Language  }} ▼</span></label>
             <input type="checkbox" id="lang">
+            <label for="lang" id="lang-label"><span>{{ $.Site.Language  }} ▼</span></label>
 
             <div class="langs">
-                {{ range $.Site.Languages }}<p><a href="/{{ .Lang }}" {{ if (eq $.Site.Language .Lang)}}style="text-decoration: underline"{{ end }}>{{ .Lang }}</a></p>{{ end }}
+                {{ range $.Site.Languages }}{{ if (ne $.Lang .Lang)}}<p><a href="/{{ .Lang }}">{{ .Lang }}</a></p>{{ end }}{{ end }}
             </div>
         </nav>
         <a href="https://github.com/florisboard/florisboard" target="_blank">
