@@ -9,7 +9,7 @@
             <label for="lang" id="lang-label"><span>{{ $.Site.Language  }} ▼</span></label>
 
             <div class="langs">
-                {{ range $.Site.Languages }}{{ if (ne $.Lang .Lang)}}<p><a href="/{{ .Lang }}">{{ .Lang }}</a></p>{{ end }}{{ end }}
+                {{ range .AllTranslations }}{{ if (ne $.Lang .Lang)}}<p><a href="{{ .Permalink }}">{{ .Lang }}</a></p>{{ end }}{{ end}}
             </div>
         </nav>
         <a href="https://github.com/florisboard/florisboard" target="_blank">
