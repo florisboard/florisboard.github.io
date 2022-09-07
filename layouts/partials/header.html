@@ -3,7 +3,17 @@
         <img src="/images/app-icon.png" alt="FlorisBoard app icon">
         <span>FlorisBoard</span>
     </a>
-    <a href="https://github.com/florisboard/florisboard" target="_blank">
-        <span>{{ .Param "gh-repo" }}</span>
-    </a>
+    <div>
+        <nav id="lang-select">
+            <label for="lang" id="lang-label"><span>{{ $.Site.Language  }} ▼</span></label>
+            <input type="checkbox" id="lang">
+
+            <div class="langs">
+                {{ range $.Site.Languages }}<p><a href="/{{ .Lang }}" {{ if (eq $.Site.Language .Lang)}}style="text-decoration: underline"{{ end }}>{{ .Lang }}</a></p>{{ end }}
+            </div>
+        </nav>
+        <a href="https://github.com/florisboard/florisboard" target="_blank">
+            <span>{{ .Param "gh-repo" }}</span>
+        </a>
+    </div>
 </header>
