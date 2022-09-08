@@ -1,6 +1,6 @@
 # baseURL = "https://florisboard.org/"
 baseURL = "https://f.delthia.com/"
-defaultContentLanguage = 'en'
+defaultContentLanguage = "en"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 assetDir = "src"
 enableRobotsTXT = true
