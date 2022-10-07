@@ -1,11 +1,4 @@
-contentDir = 'content/es'
+contentDir = "content/es"
 description = "Un teclado libre para Android que respeta tu privacidad. Actualmente en beta temprana."
 weight = 2
 languageCode = "es-ES"
-gh-repo = "Visitar el repositorio de GitHub"
-privacy = "Política de privacidad"
-not-found = "No se pudo encontrar el recurso solicitado. Por favor, comprueba la dirección y prueba otra vez."
-footer = "¡Para más información y opciones de descarga echa un vistazo al repositorio de GitHub!"
-modificated  = "Modificado por última vez el"
-florisboard-icon = "Icono de la aplicación FlorisBoard"
-florisboard-screenshot = "Captura de pantalla de FlorisBoard"

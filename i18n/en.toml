@@ -1,0 +1,20 @@
+[repo]
+    other = "Visit GitHub repo"
+
+[privacy]
+    other = "Privacy policy"
+
+[not-found]
+    other = "The requested resource could not be found. Please check the address and try again."
+
+[footer]
+    other = "For more information and download options check out the GitHub repo!"
+
+[modified]
+    other = "Last modified"
+
+[florisboard-icon]
+    other = "FlorisBoard app icon"
+
+[florisboard-screenshot]
+    other = "Florisboard screenshot"

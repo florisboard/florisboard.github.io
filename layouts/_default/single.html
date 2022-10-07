@@ -1,5 +1,6 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
-<p class="last-modified">{{ .Param "modificated" }} {{ with .Lastmod }}{{ . | time.Format ":date_medium" }}</p>{{ end }}
+<!-- <p class="last-modified">{{ i18n "modified" }} {{ with .Lastmod }}{{ . | time.Format ":date_medium" }}</p>{{ end }} -->
+{{ with .Lastmod }}<p class="last-modified">{{ i18n "modified" }}: {{ . | time.Format ":date_medium" }}</p>{{ end }}
 {{ .Content }}
 {{ end }}

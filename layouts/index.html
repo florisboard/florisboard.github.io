@@ -1,8 +1,8 @@
 {{ define "main" }}
 <main id="floris-main">
-    <p class="main-description">{{ .Param "description" }}</p>
-    <img src="/images/florisboard-screenshot.{{ .Lang }}.jpeg" class="main-image" alt="{{ .Param "florisboard-screenshot" }}">
-    <p class="main-moreinfo">{{ .Param "footer" }}</p>
-    <a href="https://github.com/florisboard/florisboard" target="_blank">{{ .Param "gh-repo" }}</a>
+    <p class="main-description">{{ i18n "description" }}</p>
+    <img src="/images/florisboard-screenshot.{{ .Lang }}.jpeg" class="main-image" alt="{{ i18n "florisboard-screenshot" }}">
+    <p class="main-moreinfo">{{ i18n "footer" }}</p>
+    <a href="https://github.com/florisboard/florisboard" target="_blank">{{ i18n "repo" }}</a>
 </main>
 {{ end }}
