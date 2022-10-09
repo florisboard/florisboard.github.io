@@ -31,7 +31,7 @@ No. Cualquier dato personal que persista se almacena localmente y **nunca** deja
 
 ## Otro
 
-Para información sobre la lista de permisos pedidos por FlorisBoard, por favor, lee [este](https://github.com/florisboard/florisboard/wiki/List-of-perimssions-Florisboard-requests) documento.
+Para información sobre la lista de permisos pedidos por FlorisBoard, por favor, lee [este](https://github.com/florisboard/florisboard/wiki/List-of-permissions-FlorisBoard-requests) documento.
 
 ### Actualizaciones de esta política de privacidad
 
