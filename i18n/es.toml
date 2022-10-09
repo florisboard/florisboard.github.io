@@ -18,3 +18,6 @@
 
 [florisboard-screenshot]
     other = "Captura de pantalla de FlorisBoard"
+
+[description]
+    other = "Un teclado libre para Android que respeta tu privacidad. Actualmente en beta temprana."
