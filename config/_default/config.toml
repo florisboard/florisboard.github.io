@@ -1,5 +1,4 @@
 baseURL = "https://florisboard.org/"
-# baseURL = "https://f.delthia.com/"
 defaultContentLanguage = "en"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 assetDir = "src"
