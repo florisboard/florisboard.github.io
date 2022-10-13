@@ -1,9 +1,19 @@
 <header id="floris-header">
     <a href="{{ .Site.BaseURL }}" class="floris-branding-banner">
-        <img src="/images/app-icon.png" alt="FlorisBoard app icon">
+        <img src="/images/app-icon.png" alt="{{ i18n "florisboard-icon" }}">
         <span>FlorisBoard</span>
     </a>
-    <a href="https://github.com/florisboard/florisboard" target="_blank">
-        <span>Visit GitHub repo</span>
-    </a>
+    <div>
+        <nav id="lang-select">
+            <input type="checkbox" id="lang">
+            <label for="lang" id="lang-label"><span>{{ $.Site.Language  }} ▼</span></label>
+
+            <div class="langs">
+                {{ range .AllTranslations }}{{ if (ne $.Lang .Lang)}}<p><a href="{{ .Permalink }}">{{ .Lang }}</a></p>{{ end }}{{ end}}
+            </div>
+        </nav>
+        <a href="https://github.com/florisboard/florisboard" target="_blank">
+            <span>{{ i18n "repo" }}</span>
+        </a>
+    </div>
 </header>

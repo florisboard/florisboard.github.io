@@ -1,0 +1,23 @@
+[repo]
+    other = "Visitar el repositorio de GitHub"
+
+[privacy]
+    other = "Política de privacidad"
+
+[not-found]
+    other = "No se pudo encontrar el recurso solicitado. Por favor, comprueba la dirección y prueba otra vez"
+
+[footer]
+    other = "¡Para más información y opciones de descarga echa un vistazo al repositorio de GitHub!"
+
+[modified]
+    other = "Modificado por última vez el"
+
+[florisboard-icon]
+    other = "Icono de la aplicación FlorisBard"
+
+[florisboard-screenshot]
+    other = "Captura de pantalla de FlorisBoard"
+
+[description]
+    other = "Un teclado libre para Android que respeta tu privacidad. Actualmente en beta temprana."
