@@ -1,17 +1,22 @@
 <header id="floris-header">
-    <a href="{{ .Site.BaseURL }}" class="floris-branding-banner">
-        <img src="/images/app-icon.png" alt="{{ i18n "florisboard-icon" }}">
-        <span>FlorisBoard</span>
-    </a>
-    <div>
-        <nav id="lang-select">
-            <input type="checkbox" id="lang">
-            <label for="lang" id="lang-label"><span>{{ $.Site.Language  }} ▼</span></label>
+    <div id="banner-and-lang">
+        <a href="{{ .Site.BaseURL }}" class="floris-branding-banner">
+            <img src="/images/app-icon.png" alt="{{ i18n "florisboard-icon" }}">
+            <span>FlorisBoard</span>
+        </a>
+        <div>
+            <nav id="lang-select">
+                <input type="checkbox" id="lang">
+                <label for="lang" id="lang-label"><span>{{ $.Site.Language  }} ▼</span></label>
 
-            <div class="langs">
-                {{ range .AllTranslations }}{{ if (ne $.Lang .Lang)}}<p><a href="{{ .Permalink }}">{{ .Lang }}</a></p>{{ end }}{{ end}}
-            </div>
-        </nav>
+                <div class="langs">
+                    {{ range .AllTranslations }}{{ if (ne $.Lang .Lang)}}<p><a href="{{ .Permalink }}">{{ .Lang }}</a></p>{{ end }}{{ end}}
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div id="repo-div">
         <a href="https://github.com/florisboard/florisboard" target="_blank">
             <span>{{ i18n "repo" }}</span>
         </a>

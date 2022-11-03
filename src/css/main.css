@@ -25,10 +25,20 @@ a:hover, a:focus {
     color: var(--primary-variant);
 }
 
+#banner-and-lang {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 16px;
+    width: 100%;
+}
 #floris-header {
     align-items: center;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 16px;
     width: 100%;
