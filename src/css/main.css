@@ -26,9 +26,10 @@ a:hover, a:focus {
 }
 
 #floris-header {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     box-sizing: border-box;
-    display: flex;
     justify-content: space-between;
     padding: 16px;
     width: 100%;
@@ -52,6 +53,18 @@ a:hover, a:focus {
 }
 .floris-branding-banner > span {
     margin: 0 12px;
+}
+
+#github-and-language {
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    height: 10%;
+}
+
+#github-and-language img {
+    display: block;
+    max-height: 35px;
 }
 
 #floris-content {
@@ -158,4 +171,51 @@ a:hover, a:focus {
 #lang:checked ~ #lang-label {
     border-radius: 12px 12px 0px 0px;
     background-color: var(--surface);
+}
+
+@media only screen
+and (max-device-width : 420px)
+{
+    #floris-header {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .floris-branding-banner {
+        align-items: center;
+        border-radius: 12px;
+        color: var(--on-background);
+        display: flex;
+        font-size: 1.25rem;
+        padding: 0;
+        text-decoration: none;
+        transition: background-color 100ms ease-in-out;
+    }
+    #github-and-language {
+        display: flex;
+        align-items: center;
+        padding: 1px;
+        height: 10%;
+    }
+
+    #github-and-language img {
+        display: block;
+        max-height: 30px;
+    }
+
+    #lang-select {
+        margin-right: 0em;
+    }
+
+    #floris-footer {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        margin-top: 32px;
+        padding: 16px;
+        width: 100%;
+        font-size: 0.9em;
+    }
+
 }
