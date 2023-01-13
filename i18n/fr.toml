@@ -1,0 +1,23 @@
+[repo]
+    other = "Visiter le dépôt GitHub"
+
+[privacy]
+    other = "Politique de confidentialité"
+
+[not-found]
+    other = "La requête demandée n’a pas pu être trouvée. Merci de vérifier l’adresse et de réessayer."
+
+[footer]
+    other = "Pour plus d’information et pour télécharger l’application, visitez le dépôt GitHub !"
+
+[modified]
+    other = "Dernière modification "
+
+[florisboard-icon]
+    other = "Icône de l’application FlorisBoard"
+
+[florisboard-screenshot]
+    other = "Capture d’écran de Florisboard"
+
+[description]
+    other = "Un clavier open-source pour Android, qui respecte votre vie privée. Actuellement en bêta."
