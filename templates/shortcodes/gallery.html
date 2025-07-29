@@ -1,0 +1,15 @@
+{% set gallery_data = load_data(literal = body, format="json") %}
+
+<div class="gallery">
+  <div class="container">
+    {% for item in gallery_data %}
+      <div class="gallery-item">
+      {% set image = resize_image(path=item.file, width=240, height=180) %}
+        <a href="{{ get_url(path=item.file) }}" target="_blank">
+          <img src="{{ image.url }}" />
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+

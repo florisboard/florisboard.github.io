@@ -1,4 +1,4 @@
-name: Deploy Hugo site to Pages
+name: Deploy Zola site to Pages
 
 on:
   push:
@@ -26,35 +26,25 @@ defaults:
 jobs:
   # Build job
   build:
+    name: Publish site
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.99.0
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          submodules: recursive
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v1
-      - name: Build with Hugo
-        env:
-          # For maximum backward compatibility with Hugo modules
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-        run: |
-          hugo \
-            --baseURL ${{ steps.pages.outputs.base_url }}
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./public
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v5.0.0
+    - name: Build only
+      uses: shalzz/zola-deploy-action@v0.21.0
+      env:
+        BUILD_ONLY: true
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3.0.1
+      with:
+        path: ./public
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -64,4 +54,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4.0.5

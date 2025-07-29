@@ -1,7 +1,0 @@
-baseURL = "https://florisboard.org/"
-defaultContentLanguage = "en"
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
-assetDir = "src"
-enableRobotsTXT = true
-
-title = "FlorisBoard"
