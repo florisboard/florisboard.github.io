@@ -5,7 +5,7 @@ go_to_top = false
 +++
 _Dernière modification : 25 août 2022_
 
-FlorisBoard (le « Projet ») est un clavier open-source et respectueux de la vie privée, développé et maintenu principalement par Patrick Goldinger ([@patrickgold](https://github.com/patrickgold)) et Lars Mühlbauer ([@lm41](https://github.com/lm41)), avec le support formidable de la communité du Projet.
+FlorisBoard (le « Projet ») est un clavier open-source et respectueux de la vie privée, développé et maintenu principalement par Patrick Goldinger ([@patrickgold](https://github.com/patrickgold)), avec le support formidable de la communité du Projet.
 Cette politique de confidentialité existe pour vous donner une meilleure compréhension des données personnelles minimum qui doivent être lues et/ou stockées localement pour vous fournir un clavier fonctionnel.
 
 ## Accès aux données et utilisation

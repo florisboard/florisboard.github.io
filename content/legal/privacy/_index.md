@@ -5,7 +5,7 @@ go_to_top = false
 +++
 _Last modified: Aug 25, 2022_
 
-FlorisBoard (the "Project") is a privacy-respecting open-source keyboard primarily developed and maintained by Patrick Goldinger ([@patrickgold](https://github.com/patrickgold)) and Lars Mühlbauer ([@lm41](https://github.com/lm41)), together with the amazing support of this Project's community. This privacy policy exists to give you a better understanding what personal data must be accessed and/or locally stored at a minimum to even provide you with a keyboard service.
+FlorisBoard (the "Project") is a privacy-respecting open-source keyboard primarily developed and maintained by Patrick Goldinger ([@patrickgold](https://github.com/patrickgold)), together with the amazing support of this Project's community. This privacy policy exists to give you a better understanding what personal data must be accessed and/or locally stored at a minimum to even provide you with a keyboard service.
 
 ## Data access and usage
 
