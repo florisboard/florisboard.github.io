@@ -5,7 +5,7 @@ extra.go_to_top = true
 +++
 **FlorisBoard** is a free and open-source keyboard for Android 7.0+
 devices. It aims at being modern, user-friendly and customizable while
-fully respecting your privacy. Currently in early-beta state.
+fully respecting your privacy. Currently in beta state.
 
 {{ rezize_picture(path="/images/keyboard-fp-out.png", width=650, height=0, op="fit_width") }}
 
