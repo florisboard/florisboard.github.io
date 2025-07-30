@@ -1,23 +1,10 @@
-[repo]
-    other = "Visiter le dépôt GitHub"
+language_name = "Français"
+# Tera date format used for listing posts
+# (post publication date, tag posts list...).
+# Not used in comments, "date_locale" is used instead.
+# See https://docs.rs/chrono/0.4.31/chrono/format/strftime/index.html
+date_format = "%d %B %Y"
+date_locale = "fr_FR"
 
-[privacy]
-    other = "Politique de confidentialité"
 
-[not-found]
-    other = "La requête demandée n’a pas pu être trouvée. Merci de vérifier l’adresse et de réessayer."
-
-[footer]
-    other = "Pour plus d’information et pour télécharger l’application, visitez le dépôt GitHub !"
-
-[modified]
-    other = "Dernière modification "
-
-[florisboard-icon]
-    other = "Icône de l’application FlorisBoard"
-
-[florisboard-screenshot]
-    other = "Capture d’écran de Florisboard"
-
-[description]
-    other = "Un clavier open-source pour Android, qui respecte votre vie privée. Actuellement en bêta."
+Legal = "Politique de confidentialité"
