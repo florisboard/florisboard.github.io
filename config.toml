@@ -1,5 +1,5 @@
 #eThe URL the site will be built for
-base_url = "https://lm41.github.io"
+base_url = "https://florisboard.org"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 theme = "duckquill"
