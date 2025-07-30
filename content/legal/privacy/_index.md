@@ -3,7 +3,7 @@ title = "Privacy policy"
 [extra]
 go_to_top = false
 +++
-_Last modified: Aug 25, 2022_
+_Last modified: Aug 25, 2022 ([History](https://github.com/florisboard/florisboard.github.io/commits/main/content/legal/privacy/_index.md))_
 
 FlorisBoard (the "Project") is a privacy-respecting open-source keyboard primarily developed and maintained by Patrick Goldinger ([@patrickgold](https://github.com/patrickgold)), together with the amazing support of this Project's community. This privacy policy exists to give you a better understanding what personal data must be accessed and/or locally stored at a minimum to even provide you with a keyboard service.
 
