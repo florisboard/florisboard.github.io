@@ -2,7 +2,7 @@
 
 This repo contains all the necessary config files, assets, layouts and the actual content of the [FlorisBoard website](https://florisboard.org).
 
-This website is built using the static website framework [Zola](https;//getzola.org/), with the [duckquill](https://codeberg.org/daudix/duckquill) theme installed.
+This website is built using the static website framework [Zola](https://getzola.org/), with the [duckquill](https://codeberg.org/daudix/duckquill) theme installed.
 
 The resulting webpage is entirely static (HTML/CSS only, no server-side code) and deployed to the GitHub Pages environment automatically.
 
