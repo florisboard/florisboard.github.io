@@ -1,6 +1,6 @@
 +++
 title = "Installation"
-insert_anchor_links = "right"
+insert_anchor_links = "left"
 +++
 
 <table>
@@ -59,6 +59,21 @@ insert_anchor_links = "right"
 </td>
 </tr>
 </table>
+
+## APK signing certificate hashes
+
+The package names and SHA-256 hashes of the signature certificate are listed below, so you can verify both FlorisBoard variants with apksigner by using `apksigner verify --print-certs florisboard-<version>-<track>.apk` when you download the APK.
+If you have [ApkVerifier](https://github.com/soupslurpr/AppVerifier) installed, you can alternatively copy both the package name and the hash of the corresponding track and share them to ApkVerifier.
+
+##### Stable track:
+
+dev.patrickgold.florisboard<br>
+0B:80:71:64:50:8E:AF:EB:1F:BB:81:5B:E7:A2:3C:77:FE:68:9D:94:B1:43:75:C9:9B:DA:A9:B6:57:7F:D6:D6
+
+##### Preview track:
+
+dev.patrickgold.florisboard.beta<br>
+0B:80:71:64:50:8E:AF:EB:1F:BB:81:5B:E7:A2:3C:77:FE:68:9D:94:B1:43:75:C9:9B:DA:A9:B6:57:7F:D6:D6
 
 <!-- BEGIN SECTION: obtainium_links -->
 <!-- auto-generated link templates, do NOT edit by hand -->
