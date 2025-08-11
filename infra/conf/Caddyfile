@@ -1,6 +1,11 @@
 {
-	email {$TLS_CERT_EMAIL}
+	email {$FLPAGES_CERT_EMAIL}
 #	acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+}
+
+florisboard.org {
+	root * /srv/www
+	file_server
 }
 
 docs.florisboard.org {
