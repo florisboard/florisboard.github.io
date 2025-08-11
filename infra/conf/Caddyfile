@@ -1,0 +1,16 @@
+{
+	email {$TLS_CERT_EMAIL}
+#	acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+}
+
+docs.florisboard.org {
+	root * /srv/docs
+	file_server
+}
+
+schemas.florisboard.org {
+	root * /srv/schemas
+	file_server
+	rewrite /favicon.ico /favicon.ico
+	rewrite * /{uri}.schema.json
+}
