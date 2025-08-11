@@ -1,18 +1,25 @@
-# FlorisBoard Website
+# FlorisBoard website
 
-This repo contains all the necessary config files, assets, layouts and the actual content of the [FlorisBoard website](https://florisboard.org).
+Monorepo for multiple FlorisBoard web pages.
 
-This website is built using the static website framework [Zola](https://getzola.org/), with the [duckquill](https://codeberg.org/daudix/duckquill) theme installed.
+<!-- Link Index -->
+[florisboard.org]: florisboard.org
+[docs.florisboard.org]: docs.florisboard.org
+[schemas.florisboard.org]: schemas.florisboard.org
+[florisboard/addons-backend]: https://github.com/florisboard/addons-backend
+[florisboard/addons-frontend]: https://github.com/florisboard/addons-frontend
 
-The resulting webpage is entirely static (HTML/CSS only, no server-side code) and deployed to the GitHub Pages environment automatically.
+## Structure
 
-## Building the website locally
+Module | Description
+---|---
+`infra` | Infrastructure code for the web server
+`www` | Zola page for [florisboard.org]
+`docs` | (TODO) page for [docs.florisboard.org]
+`schemas` | Static file directory for [schemas.florisboard.org]
 
-1. [Install Zola](https://www.getzola.org/documentation/getting-started/installation/)
-2. Clone this repo (`git clone https://github.com/florisboard/florisboard.github.io`) and `cd` into it
-3. Run `git submodule update --init`
-4. Run `zola serve`
-5. Open http://localhost:1111/ in your browser
+> [!NOTE]
+> If you are looking for the source code for the Addons Store, please visit the respective [florisboard/addons-backend] and [florisboard/addons-frontend] repos.
 
 ## License
 
