@@ -16,3 +16,10 @@ apt-get -y install docker.io docker-compose fail2ban
 
 systemctl enable --now docker
 systemctl enable --now fail2ban
+
+cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+sed -i 's/^#\?PasswordAuthentication .*/PasswordAuthentication no/' /etc/ssh/sshd_config
+sed -i 's/^#\?PermitEmptyPasswords .*/PermitEmptyPasswords no/' /etc/ssh/sshd_config
+sed -i 's/^#\?PermitRootLogin .*/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
+systemctl restart ssh
+echo "SSH rules updated."
