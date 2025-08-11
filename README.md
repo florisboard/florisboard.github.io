@@ -1,25 +1,18 @@
-# FlorisBoard website
+# FlorisBoard web page infrastructure
 
 Monorepo for multiple FlorisBoard web pages.
-
-<!-- Link Index -->
-[florisboard.org]: florisboard.org
-[docs.florisboard.org]: docs.florisboard.org
-[schemas.florisboard.org]: schemas.florisboard.org
-[florisboard/addons-backend]: https://github.com/florisboard/addons-backend
-[florisboard/addons-frontend]: https://github.com/florisboard/addons-frontend
 
 ## Structure
 
 Module | Description
 ---|---
 `infra` | Infrastructure code for the web server
-`www` | Zola page for [florisboard.org]
-`docs` | (TODO) page for [docs.florisboard.org]
-`schemas` | Static file directory for [schemas.florisboard.org]
+`www` | Zola page for [florisboard.org](https://florisboard.org)
+`docs` | (TODO) page for [docs.florisboard.org](https://docs.florisboard.org)
+`schemas` | Static file directory for [schemas.florisboard.org](https://schemas.florisboard.org)
 
 > [!NOTE]
-> If you are looking for the source code for the Addons Store, please visit the respective [florisboard/addons-backend] and [florisboard/addons-frontend] repos.
+> If you are looking for the source code for the Addons Store, please visit the respective [florisboard/addons-backend](https://github.com/florisboard/addons-backend) and [florisboard/addons-frontend](https://github.com/florisboard/addons-frontend) repos.
 
 ## License
 
