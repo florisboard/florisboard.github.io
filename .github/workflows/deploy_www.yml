@@ -1,4 +1,4 @@
-name: Deploy www module to florisboard.org
+name: Deploy www to florisboard.org
 
 on:
   push:
@@ -10,48 +10,32 @@ on:
       - "www/**"
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
-  group: "pages"
+  group: "deploy-www"
   cancel-in-progress: true
 
-defaults:
-  run:
-    shell: bash
-
-# TODO: deploy to server instead of GH pages
 jobs:
-  build:
-    name: Publish site
+  build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: recursive
-    - name: Setup Pages
-      id: pages
-      uses: actions/configure-pages@v5.0.0
-    - name: Build only
-      uses: shalzz/zola-deploy-action@v0.21.0
-      env:
-        BUILD_DIR: www
-        BUILD_ONLY: true
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3.0.1
-      with:
-        path: ./www/public
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4.0.5
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Build Zola site
+        uses: shalzz/zola-deploy-action@v0.21.0
+        env:
+          BUILD_DIR: www
+          BUILD_ONLY: true
+
+      - name: Setup SSH
+        run: |
+          mkdir -p "$HOME/.ssh"
+          echo "${{ secrets.FLPAGES_DEPLOY_KEY_SSH }}" > "$HOME/.ssh/id_ed25519"
+          chmod 600 "$HOME/.ssh/id_ed25519"
+          ssh-keyscan -H florisboard.org >> "$HOME/.ssh/known_hosts"
+
+      - name: Deploy via rsync
+        run: |
+          rsync -avz --delete www/public/ deploy@florisboard.org:/srv/www/

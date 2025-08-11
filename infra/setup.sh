@@ -16,5 +16,3 @@ apt-get -y install docker.io docker-compose fail2ban
 
 systemctl enable --now docker
 systemctl enable --now fail2ban
-
-docker-compose up -d

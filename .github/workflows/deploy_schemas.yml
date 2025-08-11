@@ -1,4 +1,4 @@
-name: Deploy schemas module to schemas.florisboard.org
+name: Deploy schemas to schemas.florisboard.org
 
 on:
   push:
@@ -9,18 +9,25 @@ on:
       - "schemas/**"
   workflow_dispatch:
 
+concurrency:
+  group: "deploy-schemas"
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup SSH
         run: |
           mkdir -p "$HOME/.ssh"
           echo "${{ secrets.FLPAGES_DEPLOY_KEY_SSH }}" > "$HOME/.ssh/id_ed25519"
           chmod 600 "$HOME/.ssh/id_ed25519"
           ssh-keyscan -H schemas.florisboard.org >> "$HOME/.ssh/known_hosts"
-      - name: Copy schemas to server
-        run: rsync -r schemas/* deploy@schemas.florisboard.org:/srv/schemas/
+
+      - name: Deploy via rsync
+        run: |
+          rsync -avz --delete schemas/ deploy@schemas.florisboard.org:/srv/schemas/
 
