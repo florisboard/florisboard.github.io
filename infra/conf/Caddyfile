@@ -19,3 +19,7 @@ schemas.florisboard.org {
 	rewrite /favicon.ico /favicon.ico
 	rewrite * /{uri}.schema.json
 }
+
+www.florisboard.org {
+	redir https://florisboard.org{uri} 301
+}
