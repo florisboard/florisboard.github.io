@@ -13,6 +13,7 @@ html, body, #_kobweb-root {
 
 #_kobweb-root > footer {
     margin-top: auto;
+    text-align: center;
 }
 
 .theme-switcher summary, .theme-switcher a {
