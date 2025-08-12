@@ -1,0 +1,13 @@
+site:
+  title: "FlorisBoard Docs"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/kotlin-webpack/js/developmentExecutable/florisboard-docs.js"
+    prod:
+      script: "build/kotlin-webpack/js/productionExecutable/florisboard-docs.js"
+      siteRoot: ".kobweb/site"
+
+  port: 1112
