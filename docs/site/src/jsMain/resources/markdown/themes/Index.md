@@ -8,6 +8,8 @@ title: Using the new Theme Editor
 
 [Assets](Assets.md)
 
+[Margin and padding](Padding.md)
+
 ```json
 {
     "test": "test"
