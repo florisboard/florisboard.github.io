@@ -2,6 +2,8 @@
 title: Using the new Theme Editor
 ---
 
+[Colors](Colors.md)
+
 [Fonts](Fonts.md)
 
 [Assets](Assets.md)
