@@ -1,6 +1,7 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
 import com.varabyte.kobwebx.gradle.markdown.handlers.MarkdownHandlers
 import com.varabyte.kobwebx.gradle.markdown.ext.kobwebcall.KobwebCall
+import kotlinx.html.id
 import kotlinx.html.link
 import kotlinx.html.script
 
@@ -31,25 +32,22 @@ kobweb {
                 }
                 link {
                     rel = "stylesheet"
+                    href = "https://unpkg.com/automad-prism-themes@0.3.4/dist/prism-tokyo-night-light.css"
+                    id = "prism-light-theme"
+                    media = "(prefers-color-scheme: light)"
+                }
+                link {
+                    rel = "stylesheet"
+                    href = "https://unpkg.com/automad-prism-themes@0.3.4/dist/prism-tokyo-night.css"
+                    id = "prism-dark-theme"
+                    media = "(prefers-color-scheme: dark)"
+                }
+                script {
+                    src = "/assets/prism.js"
+                }
+                link {
+                    rel = "stylesheet"
                     href = "/assets/docs.css"
-                }
-                val highlightJsVersion = "11.11.1"
-                link {
-                    rel = "stylesheet"
-                    href = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@$highlightJsVersion/build/styles/a11y-light.min.css"
-                }
-                link {
-                    rel = "stylesheet"
-                    href = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@$highlightJsVersion/build/styles/a11y-dark.min.css"
-                }
-                script {
-                    src = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@$highlightJsVersion/build/highlight.min.js"
-                }
-                script {
-                    src = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@$highlightJsVersion/build/languages/json.min.js"
-                }
-                script {
-                    src = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@$highlightJsVersion/build/languages/kotlin.min.js"
                 }
             }
         }

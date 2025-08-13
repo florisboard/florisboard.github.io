@@ -8,6 +8,8 @@ import com.varabyte.kobweb.core.KobwebApp
 @Composable
 fun AppEntry(content: @Composable () -> Unit) {
     KobwebApp {
-        content()
+        ProvidePreferredTheme {
+            content()
+        }
     }
 }

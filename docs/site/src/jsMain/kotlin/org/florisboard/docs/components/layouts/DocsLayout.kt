@@ -19,7 +19,7 @@ import org.jetbrains.compose.web.dom.Text
 @Composable
 fun DocsLayout(ctx: PageContext, content: @Composable () -> Unit) {
     LaunchedEffect(ctx.route.path) {
-        js("hljs.highlightAll()")
+        js("Prism.highlightAll()")
     }
 
     DocsHeader()

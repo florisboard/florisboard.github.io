@@ -5,8 +5,6 @@ import com.varabyte.kobweb.compose.css.width
 import com.varabyte.kobweb.navigation.Anchor
 import org.florisboard.docs.components.widgets.BootstrapIcon
 import org.florisboard.docs.components.widgets.ThemeSwitcher
-import org.jetbrains.compose.web.css.marginTop
-import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.*
 
 @Composable
