@@ -1,8 +1,16 @@
+@media (min-width: 768px) {
+    :root,
+    :host {
+        --pico-font-size: 112.5%;
+    }
+}
+
 html, body, #_kobweb-root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     min-height: 100dvh;
+    scroll-behavior: smooth;
 }
 
 #_kobweb-root > header,
@@ -38,4 +46,23 @@ header .social-icon {
 
 .fl-nowrap {
     white-space: nowrap;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    position: relative;
+}
+:is(h1, h2, h3, h4, h5, h6) > a {
+    text-decoration: none;
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    padding-right: calc(var(--pico-spacing) * .5);
+    opacity: 0.0;
+    transition: opacity var(--pico-transition);
+}
+:is(h1, h2, h3, h4, h5, h6):hover > a {
+    opacity: 0.25;
+}
+:is(h1, h2, h3, h4, h5, h6) > a:hover {
+    opacity: 0.5;
 }

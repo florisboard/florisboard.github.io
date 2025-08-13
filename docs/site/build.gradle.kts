@@ -1,6 +1,10 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import com.varabyte.kobwebx.gradle.markdown.handlers.MarkdownHandlers
+import com.varabyte.kobwebx.gradle.markdown.ext.kobwebcall.KobwebCall
 import kotlinx.html.link
 import kotlinx.html.script
+import org.commonmark.node.Link
+import org.commonmark.node.Text
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -58,15 +62,25 @@ kobweb {
             a.set { link ->
                 "com.varabyte.kobweb.navigation.Anchor(\"${link.destination}\")"
             }
-            code.set { codeBlock ->
 
+            code.set { codeBlock ->
                 val language = "\"\"\"${codeBlock.info.escapeTripleQuotedText()}\"\"\""
                 val text = "\"\"\"${codeBlock.literal.escapeTripleQuotedText()}\"\"\""
                 "org.florisboard.docs.components.widgets.CodeBlock($language, $text)"
             }
-            inlineCode.set {inlineCode ->
+
+            inlineCode.set { inlineCode ->
                 val text = "\"${inlineCode.literal.escapeSingleQuotedText()}\""
                 "org.florisboard.docs.components.widgets.NoWrapCodeBlock($text)"
+            }
+
+            // Source: https://github.com/varabyte/kobweb-site/blob/79515be7b6b0db0b96e2072f33ded9fb616c5026/site/build.gradle.kts#L100-L113
+            val baseHeadingHandler = heading.get()
+            heading.set { heading ->
+                val result = baseHeadingHandler.invoke(this, heading)
+                val id = data.getValue(MarkdownHandlers.DataKeys.HeadingIds).getValue(heading)
+                heading.appendChild(KobwebCall(".components.widgets.HeadingAnchorLink(\"#$id\")"))
+                result
             }
         }
     }

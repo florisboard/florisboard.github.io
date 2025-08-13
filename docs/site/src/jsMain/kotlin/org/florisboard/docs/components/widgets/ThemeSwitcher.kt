@@ -6,16 +6,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import com.varabyte.kobweb.compose.dom.GenericTag
 import kotlinx.browser.document
 import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Li
 import org.jetbrains.compose.web.dom.Span
-import org.jetbrains.compose.web.dom.TagElement
 import org.jetbrains.compose.web.dom.Text
 import org.jetbrains.compose.web.dom.Ul
 import org.w3c.dom.HTMLDetailsElement
-import org.w3c.dom.HTMLElement
 
 enum class Theme(val id: String, val icon: String) {
     AUTO(
@@ -56,7 +55,7 @@ fun ThemeSwitcher() {
         }
     }
 
-    TagElement("details", {
+    GenericTag("details", attrs = {
         classes("dropdown", "theme-switcher")
         ref {
             currentDetailsRef = it
@@ -65,7 +64,7 @@ fun ThemeSwitcher() {
             }
         }
     }) {
-        TagElement<HTMLElement>("summary", null) {
+        GenericTag("summary") {
             BootstrapIcon(currentTheme.icon)
         }
         Ul {
