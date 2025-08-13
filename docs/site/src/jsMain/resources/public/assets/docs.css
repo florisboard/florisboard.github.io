@@ -35,3 +35,7 @@ header .logo {
 header .social-icon {
     font-size: 1.25rem;
 }
+
+.fl-nowrap {
+    white-space: nowrap;
+}

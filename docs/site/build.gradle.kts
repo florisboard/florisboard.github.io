@@ -64,6 +64,10 @@ kobweb {
                 val text = "\"\"\"${codeBlock.literal.escapeTripleQuotedText()}\"\"\""
                 "org.florisboard.docs.components.widgets.CodeBlock($language, $text)"
             }
+            inlineCode.set {inlineCode ->
+                val text = "\"${inlineCode.literal.escapeSingleQuotedText()}\""
+                "org.florisboard.docs.components.widgets.NoWrapCodeBlock($text)"
+            }
         }
     }
 }
