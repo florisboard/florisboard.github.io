@@ -23,3 +23,15 @@ html, body, #_kobweb-root {
     height: 100%;
     gap: 0.25em;
 }
+
+header .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.185rem;
+}
+
+header .social-icon {
+    font-size: 1.25rem;
+}

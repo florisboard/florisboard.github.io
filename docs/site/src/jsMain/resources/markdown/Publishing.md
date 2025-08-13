@@ -1,8 +1,7 @@
 ---
 title: How to publish on FlorisBoard Addons
+applies_to: v0.4.0-beta03 or newer
 ---
-
-**Applies to**: _v0.4.0-beta03_ or newer
 
 ---
 

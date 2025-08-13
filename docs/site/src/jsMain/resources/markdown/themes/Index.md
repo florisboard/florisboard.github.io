@@ -1,6 +1,10 @@
 ---
-title: How to use the theme editor
+title: Using the new Theme Editor
 ---
+
+[Fonts](Fonts.md)
+
+[Assets](Assets.md)
 
 ```json
 {

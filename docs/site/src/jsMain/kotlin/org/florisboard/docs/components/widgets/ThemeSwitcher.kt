@@ -20,15 +20,15 @@ import org.w3c.dom.HTMLElement
 enum class Theme(val id: String, val icon: String) {
     AUTO(
         id = "auto",
-        icon = "contrast",
+        icon = "circle-half",
     ),
     LIGHT(
         id = "light",
-        icon = "light_mode",
+        icon = "sun",
     ),
     DARK(
         id = "dark",
-        icon = "dark_mode",
+        icon = "moon",
     );
 }
 
@@ -66,7 +66,7 @@ fun ThemeSwitcher() {
         }
     }) {
         TagElement<HTMLElement>("summary", null) {
-            MaterialSymbolsOutlined(currentTheme.icon)
+            BootstrapIcon(currentTheme.icon)
         }
         Ul {
             Theme.entries.forEach { theme ->
@@ -77,7 +77,7 @@ fun ThemeSwitcher() {
                             currentDetailsRef?.removeAttribute("open")
                         }
                     }) {
-                        MaterialSymbolsOutlined(theme.icon)
+                        BootstrapIcon(theme.icon)
                         Span { Text(theme.id) }
                     }
                 }

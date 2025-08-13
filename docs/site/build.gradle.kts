@@ -21,7 +21,7 @@ kobweb {
             head.add {
                 link {
                     rel = "stylesheet"
-                    href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+                    href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
                 }
                 link {
                     rel = "stylesheet"
@@ -55,6 +55,9 @@ kobweb {
     markdown {
         defaultLayout = ".components.layouts.DocsLayout"
         handlers {
+            a.set { link ->
+                "com.varabyte.kobweb.navigation.Anchor(\"${link.destination}\")"
+            }
             code.set { codeBlock ->
 
                 val language = "\"\"\"${codeBlock.info.escapeTripleQuotedText()}\"\"\""
