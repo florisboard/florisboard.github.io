@@ -3,8 +3,6 @@ import com.varabyte.kobwebx.gradle.markdown.handlers.MarkdownHandlers
 import com.varabyte.kobwebx.gradle.markdown.ext.kobwebcall.KobwebCall
 import kotlinx.html.link
 import kotlinx.html.script
-import org.commonmark.node.Link
-import org.commonmark.node.Text
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
