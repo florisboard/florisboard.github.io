@@ -1,5 +1,6 @@
 ---
 title: List of permissions FlorisBoard requests
+menu_position: 90
 ---
 
 This document outlines the list of permissions that FlorisBoard requests. Note, that FlorisBoard works perfectly fine without any of these permissions, but includes them to provide a better user experience.

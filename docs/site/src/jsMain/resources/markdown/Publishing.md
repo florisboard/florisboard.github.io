@@ -1,11 +1,12 @@
 ---
 title: How to publish on FlorisBoard Addons
 applies_to: v0.4.0-beta03 or newer
+menu_position: 3
 ---
 
 ---
 
-This wiki page exclusively explains how to publish your own extension on the official [FlorisBoard Addons Store][store_url]. If you have questions regarding creating extensions or how to properly package them, please check out the [Creating and Packaging Extensionse](https://github.com/florisboard/florisboard/wiki/Creating-and-Packaging-Extensions) guide.
+This wiki page exclusively explains how to publish your own extension on the official [FlorisBoard Addons Store][store_url]. If you have questions regarding creating extensions or how to properly package them, please check out the [Creating and Packaging Extensionse](Extensions.md) guide.
 
 > [!NOTE]
 > During the initial beta release phase the Addons Store _will_ only accept theme extensions. Uploading other types of extensions will not be approved by the reviewing team for now. Later on we plan to add support for language packs and keyboard extensions.

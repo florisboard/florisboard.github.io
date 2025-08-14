@@ -1,36 +1,20 @@
 ---
-title: Using the new Theme Editor
+title: Themes in v0.5
 menu_position: 1
 ---
 
-[Colors](Colors.md)
+Beginning with v0.5, FlorisBoard theme and its editor have undergone a major rework. The underlying theme engine, Snygg,
+has been upgraded to v2 and loads of new attributes have been added, as can be seen in
+[this changelog](https://github.com/florisboard/florisboard/pull/2855). Major new features were support for custom
+background images, support for custom fonts, more granular styling options regarding spacing and textual styling.
 
-[Fonts](Fonts.md)
+Due to this upgrade, themes designed for v0.4 (Snygg v1) are **not compatible** with themes designed for v0.5
+(Snygg v2) and newer. There is no automatic upgrade path. Most themes on [FlorisBoard Addons][addons_url] should have
+been upgraded to the new Snygg version, thus you will probably want to update your theme with v0.5 as well.
 
-[Assets](Assets.md)
+This documentation provides some guides on how to use the new theme editor, and provides detailed information
+regarding the stylesheet and its properties.
 
-[Margin and padding](Padding.md)
+**Note:** This documentation section is WIP and will be updated in the following weeks.
 
-```json
-{
-    "test": "test"
-}
-```
-
-```kotlin
-fun helloWorld() {
-    println("Upss!")
-}
-```
-
-
-```kotlin
-@Composable
-@Page
-@Layout(".components.layouts.DocsLayout")
-fun KobwebPage() {
-  H1 {
-    Text("Kobweb Tutorial")
-  }
-}
-```
+[addons_url]: https://beta.addons.florisboard.org/

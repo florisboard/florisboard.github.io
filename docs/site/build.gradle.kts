@@ -150,7 +150,6 @@ object TableOfContents {
             )
             rootNode
         }
-        println(pages)
         scope.generateKotlin("org/florisboard/docs/components/sections/DocsMenu.kt", buildString {
             appendLine("package org.florisboard.docs.components.sections")
             appendLine()

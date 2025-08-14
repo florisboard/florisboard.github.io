@@ -22,9 +22,11 @@ Without any further setup, FlorisBoard supports five different font families, as
 | `monospace`  | <span style="font-family: monospace;">Example text.</span>  |
 | `cursive`    | <span style="font-family: cursive;">Example text.</span>    |
 
-These can be
+These can be used by assigning a generic font family value to the `font-family` property.
 
 ### Custom fonts
+
+TODO: document :D
 
 ## Font size
 

@@ -1,6 +1,7 @@
 ---
 title: Creating and Packaging Extensions
-appliesTo: v0.4.0-beta03 or newer
+applies_to: v0.4.0-beta03 or newer
+menu_position: 2
 ---
 
 ---
