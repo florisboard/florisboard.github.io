@@ -70,7 +70,4 @@ Controls the weight of the text to be rendered.
 
 
 
-
-
-
-
+<table-of-contents />

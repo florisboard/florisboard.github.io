@@ -10,3 +10,5 @@ The following paragraph lists all permission FlorisBoard requests and provides a
 * [android.permission.POST_NOTIFICATIONS](https://developer.android.com/reference/android/Manifest.permission#POST_NOTIFICATIONS) - To post notifications such as the crash report notifications, etc. (Since v0.4.0-beta01)
 
 For reference, you can also look up the [AndroidManifest.xml](https://github.com/florisboard/florisboard/blob/main/app/src/main/AndroidManifest.xml), which contains all permissions FlorisBoard requests.
+
+<table-of-contents />

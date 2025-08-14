@@ -69,3 +69,5 @@ For theme extensions, you can additionally specify a themes array in the `extens
 ```
 
 Then place your stylesheet in `stylesheets/<theme_id>.json` and the app will automatically load the stylesheet from this path.
+
+<table-of-contents />

@@ -1,3 +1,12 @@
+/*
+    breakpoint-xs:  <= 575px
+    breakpoint-sm:  >= 576px
+    breakpoint-md:  >= 768px
+    breakpoint-lg:  >= 1024px
+    breakpoint-xl:  >= 1280px
+    breakpoint-xxl: >= 1536px
+*/
+
 @media (min-width: 768px) {
     :root,
     :host {
@@ -29,7 +38,7 @@ html, body, #_kobweb-root {
     flex-direction: row;
     align-items: center;
     height: 100%;
-    gap: 0.25em;
+    gap: 0.25rem;
 }
 
 header .logo {
@@ -48,9 +57,73 @@ header .social-icon {
     white-space: nowrap;
 }
 
+main {
+    display: grid;
+    grid-template-columns: auto 10rem;
+    column-gap: 3rem;
+}
+main > *:not(#table-of-contents) {
+    grid-column: 1;
+    grid-row: auto;
+}
+main > #table-of-contents {
+    grid-column: 2;
+    grid-row: 1 / span 10000000; /* TODO: is there a better way than this?? */
+}
+
+#table-of-contents > nav {
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+}
+#table-of-contents li[data-level] {
+    --level: 1;
+}
+#table-of-contents li[data-level="2"] {
+    --level: 2;
+}
+#table-of-contents li[data-level="3"] {
+    --level: 3;
+}
+#table-of-contents li[data-level="4"] {
+    --level: 4;
+}
+#table-of-contents li[data-level="5"] {
+    --level: 5;
+}
+#table-of-contents li[data-level="6"] {
+    --level: 6;
+}
+#table-of-contents li[data-level] {
+    position: relative;
+    padding-left: calc(
+        var(--pico-nav-element-spacing-horizontal) +
+        (var(--level) - 1) * 0.75rem
+    );
+    padding-top: calc(var(--pico-nav-element-spacing-vertical) * 0.25);
+    padding-bottom: calc(var(--pico-nav-element-spacing-vertical) * 0.25);
+}
+#table-of-contents li[data-level]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--pico-nav-element-spacing-horizontal) + (var(--level) - 2) * 0.75rem);
+    width: 1px;
+    background: var(--pico-table-border-color);
+}
+@media screen and (max-width: 1024px) {
+    main {
+        grid-template-columns: 100%;
+    }
+    #table-of-contents {
+        display: none;
+    }
+}
+
 :is(h1, h2, h3, h4, h5, h6) > a {
     text-decoration: none;
-    padding-left: calc(var(--pico-spacing) * .5);
+    padding-left: calc(var(--pico-spacing) * 0.5);
     opacity: 0.0;
     transition: opacity var(--pico-transition);
     user-select: none;

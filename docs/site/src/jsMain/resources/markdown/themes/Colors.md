@@ -66,3 +66,5 @@ Controls the shadow color color of the element.
 - property-name: `shadow-color`
 - Inherits implicitly: no
 - Possible values: [Static color](#static-color), [Dynamic light color](#dynamic-light-color), [Dynamic dark color](#dynamic-dark-color)
+
+<table-of-contents />

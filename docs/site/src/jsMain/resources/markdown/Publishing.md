@@ -53,5 +53,6 @@ You now need to upload the flex file to the Addons Store. For this create a rele
 
 Creating subsequent releases can be done in the same place as the initial release. Important is that the version string is newer than the previously provided version, else your new release won't be accepted.
 
+<table-of-contents />
 
 [store_url]: https://beta.addons.florisboard.org

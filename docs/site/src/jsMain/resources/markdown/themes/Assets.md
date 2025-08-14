@@ -25,3 +25,5 @@ Click on the find file icon, to select the image file.
 ## Add a custom font to a theme
 
 Follow the steps in the [fonts](fonts#custom-fonts) section.
+
+<table-of-contents />

@@ -27,3 +27,5 @@ Controls the padding of the element.
 - property-name: `padding`
 - Inherits implicitly: no
 - Possible values: [Padding value](#padding-value)
+
+<table-of-contents />
