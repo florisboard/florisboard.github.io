@@ -28,6 +28,20 @@ fun DocsHeader() {
                     }
                 }
                 Li {
+                    Anchor(href = "https://www.reddit.com/r/florisboard/", attrs = {
+                        classes("social-icon")
+                    }) {
+                        BootstrapIcon("reddit")
+                    }
+                }
+                Li {
+                    Anchor(href = "https://matrix.to/#/#florisboard:matrix.org", attrs = {
+                        classes("social-icon")
+                    }) {
+                        BootstrapIcon("chat-right-text-fill")
+                    }
+                }
+                Li {
                     ThemeSwitcher()
                 }
             }
