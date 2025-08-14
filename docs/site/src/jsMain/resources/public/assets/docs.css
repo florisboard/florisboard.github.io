@@ -99,6 +99,7 @@ html, body, #_kobweb-root {
     position: sticky;
     top: 0;
     background-color: var(--pico-background-color);
+    z-index: 50;
 }
 #_kobweb-root > header .logo {
     display: flex;
@@ -154,7 +155,6 @@ main aside nav {
     font-size: 16px;
     position: fixed;
     width: var(--aside-width);
-    z-index: -1;
 }
 main aside nav li {
     --level: 1;
