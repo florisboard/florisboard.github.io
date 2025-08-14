@@ -9,7 +9,7 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun DocsFooter() {
-    Footer(attrs = { classes("container") }) {
+    Footer(attrs = { classes("container-lg") }) {
         P {
             Span {
                 Text("© 2020-2025 ")

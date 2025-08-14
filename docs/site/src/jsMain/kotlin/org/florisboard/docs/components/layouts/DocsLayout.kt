@@ -24,7 +24,7 @@ fun DocsLayout(ctx: PageContext, content: @Composable () -> Unit) {
 
     DocsHeader()
 
-    Main(attrs = { classes("container") }) {
+    Main(attrs = { classes("container-lg") }) {
         val title = ctx.markdown?.frontMatter?.query("title")?.scalarOrNull()
         if (title != null) {
             LaunchedEffect(title) {

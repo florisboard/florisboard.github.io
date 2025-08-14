@@ -7,6 +7,73 @@
     breakpoint-xxl: >= 1536px
 */
 
+/* BEGIN PICO CSS ENHANCEMENTS */
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl,
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--pico-spacing);
+  padding-left: var(--pico-spacing);
+}
+@media (min-width: 576px) {
+    .container,
+    .container-sm {
+        max-width: 510px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@media (min-width: 768px) {
+    .container,
+    .container-sm,
+    .container-md {
+        max-width: 700px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@media (min-width: 1024px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg  {
+        max-width: 950px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@media (min-width: 1280px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl {
+        max-width: 1200px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@media (min-width: 1536px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl,
+    .container-xxl {
+        max-width: 1450px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+/* END PICO CSS ENHANCEMENTS */
+
+
 @media (min-width: 768px) {
     :root,
     :host {

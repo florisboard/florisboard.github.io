@@ -9,7 +9,7 @@ import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun DocsHeader() {
-    Header(attrs = { classes("container") }) {
+    Header(attrs = { classes("container-lg") }) {
         Nav {
             Ul {
                 Li {
