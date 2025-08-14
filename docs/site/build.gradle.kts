@@ -2,6 +2,8 @@ import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
 import com.varabyte.kobwebx.gradle.markdown.handlers.MarkdownHandlers
 import com.varabyte.kobwebx.gradle.markdown.ext.kobwebcall.KobwebCall
 import com.varabyte.kobweb.common.collect.Key
+import com.varabyte.kobwebx.gradle.markdown.MarkdownBlock
+import com.varabyte.kobwebx.gradle.markdown.MarkdownEntry
 import com.varabyte.kobwebx.gradle.markdown.children
 import kotlinx.html.id
 import kotlinx.html.link
@@ -123,6 +125,9 @@ kobweb {
                 }
             }
         }
+        process.set { process ->
+            TableOfContents.generateDocsMenu(this, process)
+        }
     }
 }
 
@@ -141,6 +146,40 @@ kotlin {
 }
 
 object TableOfContents {
+    fun generateDocsMenu(scope: MarkdownBlock.ProcessScope, entries: List<MarkdownEntry>) {
+        val pages = entries.fold(DocumentationMenu.MdPageNode.new()) { rootNode, page ->
+            rootNode.add(
+                route = page.route,
+                title = page.frontMatter.query("title")?.scalarOrNull() ?: "<NO_TITLE>",
+                position = page.frontMatter.query("menu_position")?.scalarOrNull()?.toIntOrNull() ?: Int.MAX_VALUE,
+            )
+            rootNode
+        }
+        println(pages)
+        scope.generateKotlin("org/florisboard/docs/components/sections/DocsMenu.kt", buildString {
+            appendLine("package org.florisboard.docs.components.sections")
+            appendLine()
+            appendLine("import androidx.compose.runtime.*")
+            appendLine("import org.jetbrains.compose.web.dom.*")
+            appendLine("import com.varabyte.kobweb.navigation.Anchor")
+            appendLine()
+            appendLine("@Composable")
+            appendLine("fun DocsMenu() {")
+            appendLine("    Aside(attrs = { id(\"docs-menu\") }) {")
+            appendLine("    Nav {")
+            appendLine("    Ul {")
+            pages.toEntryList().forEach { (route, title, level) ->
+                appendLine("    org.florisboard.docs.components.widgets.DocsMenuEntry(href = \"$route\", level = $level) {")
+                appendLine("    Text(\"$title\")") // TODO: escaping!!!!!!!
+                appendLine("    }")
+            }
+            appendLine("    }")
+            appendLine("    }")
+            appendLine("    }")
+            appendLine("}")
+        })
+    }
+
     val HeadingMetasKey = let {
         // We need this due to incremental cache issues, else this key seems to get re-created with
         // the key already existing
@@ -152,6 +191,78 @@ object TableOfContents {
     data class HeadingMeta(
         val anchor: String,
         val text: String,
+        val level: Int,
+    )
+}
+
+object DocumentationMenu {
+    data class MdPageNode(
+        var title: String,
+        var position: Int,
+        var children: MutableMap<String, MdPageNode>,
+    ) {
+        companion object {
+            fun new(): MdPageNode {
+                return MdPageNode(
+                    title = "<ROOT>",
+                    position = Int.MAX_VALUE,
+                    children = mutableMapOf(),
+                )
+            }
+        }
+
+        fun add(route: String, title: String, position: Int) {
+            val routeParts = route.split("/").filter { it.isNotEmpty() }
+            add(routeParts, title, position)
+        }
+
+        private fun add(routeParts: List<String>, title: String, position: Int) {
+            if (routeParts.isEmpty()) {
+                this.title = title
+                this.position = position
+            } else {
+                val head = routeParts.first()
+                val tail = routeParts.drop(1)
+                children.getOrPut(head) { new() }.add(tail, title, position)
+            }
+        }
+
+        fun toEntryList(): List<MdPageEntry> {
+            return buildList {
+                addEntries(routeParts = emptyList(), level = 0)
+            }.filter { it.level > 0 }
+        }
+
+        private fun MutableList<MdPageEntry>.addEntries(routeParts: List<String>, level: Int) {
+            add(MdPageEntry(
+                route = routeParts.toRouteString(),
+                title = title,
+                level = level,
+            ))
+            children.entries.sortedWith { (aPart, aNode), (bPart, bNode) ->
+                val positionResult = aNode.position.compareTo(bNode.position)
+                if (positionResult != 0) {
+                    return@sortedWith positionResult
+                }
+                aPart.compareTo(bPart)
+            }.forEach { (part, node) ->
+                with(node) {
+                    addEntries(
+                        routeParts = routeParts + listOf(part),
+                        level = level + 1,
+                    )
+                }
+            }
+        }
+
+        private fun List<String>.toRouteString(): String {
+            return "/${joinToString("/")}"
+        }
+    }
+
+    data class MdPageEntry(
+        val route: String,
+        val title: String,
         val level: Int,
     )
 }

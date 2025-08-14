@@ -1,5 +1,6 @@
 ---
 title: Using the new Theme Editor
+menu_position: 1
 ---
 
 [Colors](Colors.md)

@@ -126,42 +126,49 @@ header .social-icon {
 
 main {
     display: grid;
-    grid-template-columns: auto 10rem;
+    grid-template-columns: 10rem auto 10rem;
     column-gap: 3rem;
 }
-main > *:not(#table-of-contents) {
+main > #docs-menu {
     grid-column: 1;
+    grid-row: 1 / span 10000000; /* TODO: is there a better way than this?? */
+}
+main > #content {
+    display: contents;
+}
+main > #content > * {
+    grid-column: 2;
     grid-row: auto;
 }
-main > #table-of-contents {
-    grid-column: 2;
+main > #content > #table-of-contents {
+    grid-column: 3;
     grid-row: 1 / span 10000000; /* TODO: is there a better way than this?? */
 }
 
-#table-of-contents > nav {
+main aside nav {
     font-size: 16px;
     position: sticky;
     top: 0;
 }
-#table-of-contents li[data-level] {
+main aside nav li {
     --level: 1;
 }
-#table-of-contents li[data-level="2"] {
+main aside nav li[data-level="2"] {
     --level: 2;
 }
-#table-of-contents li[data-level="3"] {
+main aside nav li[data-level="3"] {
     --level: 3;
 }
-#table-of-contents li[data-level="4"] {
+main aside nav li[data-level="4"] {
     --level: 4;
 }
-#table-of-contents li[data-level="5"] {
+main aside nav li[data-level="5"] {
     --level: 5;
 }
-#table-of-contents li[data-level="6"] {
+main aside nav li[data-level="6"] {
     --level: 6;
 }
-#table-of-contents li[data-level] {
+main aside nav li[data-level] {
     position: relative;
     padding-left: calc(
         var(--pico-nav-element-spacing-horizontal) +
@@ -170,7 +177,7 @@ main > #table-of-contents {
     padding-top: calc(var(--pico-nav-element-spacing-vertical) * 0.25);
     padding-bottom: calc(var(--pico-nav-element-spacing-vertical) * 0.25);
 }
-#table-of-contents li[data-level]::before {
+main aside nav li[data-level]::before {
     content: "";
     position: absolute;
     top: 0;
@@ -179,11 +186,17 @@ main > #table-of-contents {
     width: 1px;
     background: var(--pico-table-border-color);
 }
+main aside nav li.current::before {
+    background: var(--pico-primary);
+}
+main aside nav li a[aria-current="page"] {
+    font-weight: bold;
+}
 @media screen and (max-width: 1024px) {
     main {
         grid-template-columns: 100%;
     }
-    #table-of-contents {
+    #docs-menu, #table-of-contents {
         display: none;
     }
 }
