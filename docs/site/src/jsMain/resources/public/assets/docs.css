@@ -95,38 +95,43 @@ html, body, #_kobweb-root {
     padding-block: var(--pico-block-spacing-vertical);
 }
 
-#_kobweb-root > footer {
-    margin-top: auto;
-    text-align: center;
+#_kobweb-root > header {
+    position: sticky;
+    top: 0;
+    background-color: var(--pico-background-color);
 }
-
-.theme-switcher summary, .theme-switcher a {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    height: 100%;
-    gap: 0.25rem;
-}
-
-header .logo {
+#_kobweb-root > header .logo {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5em;
     font-size: 1.185rem;
 }
-
-header .social-icon {
+#_kobweb-root > header .social-icon {
     font-size: 1.25rem;
 }
 
-.fl-nowrap {
-    white-space: nowrap;
+#_kobweb-root > footer {
+    margin-top: auto;
+    text-align: center;
+}
+
+.theme-switcher > summary, .theme-switcher a {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    gap: 0.25rem;
+}
+.theme-switcher > summary + ul {
+    left: unset !important;
+    right: 0 !important;
 }
 
 main {
+    --aside-width: 10rem;
     display: grid;
-    grid-template-columns: 10rem auto 10rem;
+    grid-template-columns: var(--aside-width) auto var(--aside-width);
     column-gap: 3rem;
 }
 main > #docs-menu {
@@ -147,8 +152,9 @@ main > #content > #table-of-contents {
 
 main aside nav {
     font-size: 16px;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    width: var(--aside-width);
+    z-index: -1;
 }
 main aside nav li {
     --level: 1;
@@ -192,9 +198,12 @@ main aside nav li.current::before {
 main aside nav li a[aria-current="page"] {
     font-weight: bold;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
     main {
         grid-template-columns: 100%;
+    }
+    main > #content > * {
+        grid-column: 1;
     }
     #docs-menu, #table-of-contents {
         display: none;
@@ -214,7 +223,7 @@ main aside nav li a[aria-current="page"] {
 :is(h1, h2, h3, h4, h5, h6) > a:hover {
     opacity: 0.5;
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 1023px) {
     :is(h1, h2, h3, h4, h5, h6) > a {
         opacity: 0.25;
     }

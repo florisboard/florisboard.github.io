@@ -72,11 +72,6 @@ kobweb {
                 "org.florisboard.docs.components.widgets.CodeBlock($language, $text)"
             }
 
-            inlineCode.set { inlineCode ->
-                val text = "\"${inlineCode.literal.escapeSingleQuotedText()}\""
-                "org.florisboard.docs.components.widgets.NoWrapCodeBlock($text)"
-            }
-
             // Base idea: https://github.com/varabyte/kobweb-site/blob/79515be7b6b0db0b96e2072f33ded9fb616c5026/site/build.gradle.kts#L100-L113
             val baseHeadingHandler = heading.get()
             heading.set { heading ->
