@@ -50,7 +50,7 @@ kobweb {
                     media = "(prefers-color-scheme: dark)"
                 }
                 script {
-                    src = "/assets/prism.js"
+                    src = "/assets/prism/prism.js"
                 }
                 link {
                     rel = "stylesheet"

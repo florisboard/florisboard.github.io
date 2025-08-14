@@ -4,19 +4,19 @@ Monorepo for multiple FlorisBoard web pages.
 
 ## Structure
 
-Module | Description
----|---
-`infra` | Infrastructure code for the web server
-`www` | Zola page for [florisboard.org](https://florisboard.org)
-`docs` | (TODO) page for [docs.florisboard.org](https://docs.florisboard.org)
-`schemas` | Static file directory for [schemas.florisboard.org](https://schemas.florisboard.org)
+| Module    | Description                                                                                          |
+|-----------|------------------------------------------------------------------------------------------------------|
+| `infra`   | Infrastructure code for the web server                                                               |
+| `www`     | [Zola](https://getzola.org) page for [florisboard.org](https://florisboard.org)                      |
+| `docs`    | [Kobweb](https://kobweb.varabyte.com/) page for [docs.florisboard.org](https://docs.florisboard.org) |
+| `schemas` | Static file directory for [schemas.florisboard.org](https://schemas.florisboard.org)                 |
 
 > [!NOTE]
 > If you are looking for the source code for the Addons Store, please visit the respective [florisboard/addons-backend](https://github.com/florisboard/addons-backend) and [florisboard/addons-frontend](https://github.com/florisboard/addons-frontend) repos.
 
 ## License
 
-This website and its contents are licensed under the [Apache 2.0 license](LICENSE):
+Unless otherwise [noted](#exceptions), this repository and all its files are licensed under the [Apache 2.0 license](LICENSE):
 
 ```
 Copyright 2022-2025 Patrick Goldinger and Lars Mühlbauer
@@ -33,3 +33,18 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+
+### Exceptions
+
+The following resources are licensed under [Creative Commons BY-SA 4.0](LICENSE-CC-BY-SA-4.0):
+- `docs/site/src/jsMain/resources/assets/images/**`
+- `docs/site/src/jsMain/resources/markdown/**`
+- `www/content/**`
+- `www/i18n/**`
+- `www/static/**`
+
+The following resources are by [David Lapshin](https://codeberg.org/daudix) and licensed under the [MIT License](https://codeberg.org/daudix/duckquill/src/branch/main/LICENSE.txt):
+- `www/themes/duckquill/**`
+
+The following resources are by [Prism.js](https://github.com/PrismJS/prism) and licensed under the [MIT License](docs/site/src/jsMain/resources/public/assets/prism/LICENSE):
+- `docs/site/src/jsMain/resources/public/assets/prism/**`
