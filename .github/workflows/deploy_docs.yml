@@ -45,10 +45,6 @@ jobs:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ steps.browser-cache-id.outputs.value }}
 
-      - name: Switch to docs dir
-        run: |
-          cd docs
-
       - name: Fetch kobweb
         uses: robinraju/release-downloader@v1.10
         with:
@@ -63,8 +59,8 @@ jobs:
 
       - name: Run export
         run: |
-          cd site
-          ../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --notty --layout static
+          cd docs/site
+          ../../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --notty --layout static
 
       - name: Setup SSH
         run: |
@@ -75,4 +71,4 @@ jobs:
 
       - name: Deploy via rsync
         run: |
-          rsync -avz --delete ./site/.kobweb/site/ deploy@docs.florisboard.org:/srv/docs/
+          rsync -avz --delete docs/site/.kobweb/site/ deploy@docs.florisboard.org:/srv/docs/
