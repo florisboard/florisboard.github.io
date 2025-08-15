@@ -1,0 +1,267 @@
+/*
+    breakpoint-xs:  <= 575px
+    breakpoint-sm:  >= 576px
+    breakpoint-md:  >= 768px
+    breakpoint-lg:  >= 1024px
+    breakpoint-xl:  >= 1280px
+    breakpoint-xxl: >= 1536px
+*/
+
+/* BEGIN PICO CSS ENHANCEMENTS */
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl,
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--pico-spacing);
+  padding-left: var(--pico-spacing);
+}
+@media (min-width: 576px) {
+    .container,
+    .container-sm {
+        max-width: 510px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@media (min-width: 768px) {
+    .container,
+    .container-sm,
+    .container-md {
+        max-width: 700px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@media (min-width: 1024px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg  {
+        max-width: 950px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@media (min-width: 1280px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl {
+        max-width: 1200px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@media (min-width: 1536px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl,
+    .container-xxl {
+        max-width: 1450px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+/* END PICO CSS ENHANCEMENTS */
+
+
+@media (min-width: 768px) {
+    :root,
+    :host {
+        --pico-font-size: 112.5%;
+    }
+}
+
+html, body, #_kobweb-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    scroll-behavior: smooth;
+}
+
+#_kobweb-root > header,
+#_kobweb-root > main,
+#_kobweb-root > footer {
+    padding-block: var(--pico-block-spacing-vertical);
+}
+
+#_kobweb-root > header {
+    position: sticky;
+    top: 0;
+    background-color: var(--pico-background-color);
+    z-index: 50;
+}
+#_kobweb-root > header .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.185rem;
+}
+#_kobweb-root > header .social-icon {
+    font-size: 1.25rem;
+}
+
+#_kobweb-root > footer {
+    margin-top: auto;
+    text-align: center;
+}
+
+.theme-switcher > summary, .theme-switcher a {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    gap: 0.25rem;
+}
+.theme-switcher > summary + ul {
+    left: unset !important;
+    right: 0 !important;
+}
+
+main {
+    --aside-width: 10rem;
+    display: grid;
+    grid-template-columns: var(--aside-width) auto var(--aside-width);
+    column-gap: 3rem;
+}
+#docs-menu-state, #docs-menu-hamburger {
+    display: none;
+}
+main > #docs-menu {
+    grid-column: 1;
+    grid-row: 1 / span 10000000; /* TODO: is there a better way than this?? */
+}
+main > #content {
+    display: contents;
+}
+main > #content > * {
+    grid-column: 2;
+    grid-row: auto;
+}
+main > #content > #table-of-contents {
+    grid-column: 3;
+    grid-row: 1 / span 10000000; /* TODO: is there a better way than this?? */
+}
+
+main aside nav {
+    font-size: 16px;
+    position: fixed;
+    width: var(--aside-width);
+}
+main aside nav li {
+    --level: 1;
+}
+main aside nav li[data-level="2"] {
+    --level: 2;
+}
+main aside nav li[data-level="3"] {
+    --level: 3;
+}
+main aside nav li[data-level="4"] {
+    --level: 4;
+}
+main aside nav li[data-level="5"] {
+    --level: 5;
+}
+main aside nav li[data-level="6"] {
+    --level: 6;
+}
+main aside nav li[data-level] {
+    position: relative;
+    padding-left: calc(
+        var(--pico-nav-element-spacing-horizontal) +
+        (var(--level) - 1) * 0.75rem
+    );
+    padding-top: calc(var(--pico-nav-element-spacing-vertical) * 0.25);
+    padding-bottom: calc(var(--pico-nav-element-spacing-vertical) * 0.25);
+}
+main aside nav li[data-level]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--pico-nav-element-spacing-horizontal) + (var(--level) - 2) * 0.75rem);
+    width: 1px;
+    background: var(--pico-table-border-color);
+}
+main aside nav li.current::before {
+    background: var(--pico-primary);
+}
+main aside nav li a[aria-current="page"] {
+    font-weight: bold;
+}
+@media screen and (max-width: 1023px) {
+    main {
+        grid-template-columns: 100%;
+    }
+    main > #content > * {
+        grid-column: 1;
+    }
+    #docs-menu, #table-of-contents {
+        display: none;
+    }
+    #docs-menu-hamburger {
+        display: block;
+        font-size: 1.5rem;
+    }
+    #docs-menu-hamburger label {
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+    #docs-menu-hamburger label .unchecked {
+        display: block;
+    }
+    #docs-menu-hamburger label .checked {
+        display: none;
+    }
+    #docs-menu-state:checked ~ header #docs-menu-hamburger label .unchecked {
+        display: none;
+    }
+    #docs-menu-state:checked ~ header #docs-menu-hamburger label .checked {
+        display: block;
+    }
+    #docs-menu-state:checked ~ main #docs-menu {
+        display: block;
+    }
+    #docs-menu-state:checked ~ main #docs-menu nav {
+        position: relative;
+        width: 100%;
+    }
+    #docs-menu-state:checked ~ main #content {
+        display: none;
+    }
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    scroll-margin-top: 7rem;
+}
+:is(h1, h2, h3, h4, h5, h6) > a {
+    text-decoration: none;
+    padding-left: calc(var(--pico-spacing) * 0.5);
+    opacity: 0.0;
+    transition: opacity var(--pico-transition);
+    user-select: none;
+}
+:is(h1, h2, h3, h4, h5, h6):hover > a {
+    opacity: 0.25;
+}
+:is(h1, h2, h3, h4, h5, h6) > a:hover {
+    opacity: 0.5;
+}
+@media screen and (max-width: 1023px) {
+    :is(h1, h2, h3, h4, h5, h6) > a {
+        opacity: 0.25;
+    }
+}

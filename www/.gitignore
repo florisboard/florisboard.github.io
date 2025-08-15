@@ -9,7 +9,7 @@ nohup.out
 .idea
 static/js/main.min.js
 static/css/main.min.css
-static/processed_images/
+static/processed_images/**
 resources/_gen/
 .hugo_build.lock
 .vscode/
