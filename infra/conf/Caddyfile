@@ -10,6 +10,7 @@ florisboard.org {
 
 docs.florisboard.org {
 	root * /srv/docs
+	try_files {path}.html {path}
 	file_server
 }
 
