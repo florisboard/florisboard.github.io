@@ -244,6 +244,9 @@ main aside nav li a[aria-current="page"] {
     }
 }
 
+:is(h1, h2, h3, h4, h5, h6) {
+    scroll-margin-top: 7rem;
+}
 :is(h1, h2, h3, h4, h5, h6) > a {
     text-decoration: none;
     padding-left: calc(var(--pico-spacing) * 0.5);
