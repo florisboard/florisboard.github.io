@@ -34,9 +34,12 @@ jobs:
 
       - uses: gradle/actions/wrapper-validation@v4
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
       - name: Query Browser Cache ID
         id: browser-cache-id
-        run: echo "value=$(./gradlew -q :site:kobwebBrowserCacheId)" >> $GITHUB_OUTPUT
+        run: echo "value=$(./docs/gradlew -q :site:kobwebBrowserCacheId)" >> $GITHUB_OUTPUT
 
       - name: Cache Browser Dependencies
         uses: actions/cache@v4
