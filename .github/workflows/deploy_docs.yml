@@ -1,0 +1,80 @@
+name: Deploy docs to docs.florisboard.org
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/deploy_docs.yml"
+      - "docs/**"
+  workflow_dispatch:
+
+concurrency:
+  group: "deploy-docs"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    env:
+      KOBWEB_CLI_VERSION: 0.9.18
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: gradle/actions/wrapper-validation@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: temurin
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Query Browser Cache ID
+        id: browser-cache-id
+        run: echo "value=$(./gradlew -q :site:kobwebBrowserCacheId)" >> $GITHUB_OUTPUT
+
+      - name: Cache Browser Dependencies
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ steps.browser-cache-id.outputs.value }}
+
+      - name: Switch to docs dir
+        run: |
+          cd docs
+
+      - name: Fetch kobweb
+        uses: robinraju/release-downloader@v1.10
+        with:
+          repository: "varabyte/kobweb-cli"
+          tag: "v${{ env.KOBWEB_CLI_VERSION }}"
+          fileName: "kobweb-${{ env.KOBWEB_CLI_VERSION }}.zip"
+          tarBall: false
+          zipBall: false
+
+      - name: Unzip kobweb
+        run: unzip kobweb-${{ env.KOBWEB_CLI_VERSION }}.zip
+
+      - name: Run export
+        run: |
+          cd site
+          ../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --notty --layout static
+
+      - name: Setup SSH
+        run: |
+          mkdir -p "$HOME/.ssh"
+          echo "${{ secrets.FLPAGES_DEPLOY_KEY_SSH }}" > "$HOME/.ssh/id_ed25519"
+          chmod 600 "$HOME/.ssh/id_ed25519"
+          ssh-keyscan -H docs.florisboard.org >> "$HOME/.ssh/known_hosts"
+
+      - name: Deploy via rsync
+        run: |
+          rsync -avz --delete ./site/.kobweb/site deploy@docs.florisboard.org:/srv/docs/
