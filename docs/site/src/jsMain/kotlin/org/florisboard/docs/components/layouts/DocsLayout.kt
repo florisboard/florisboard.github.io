@@ -9,20 +9,22 @@ import kotlinx.browser.document
 import org.florisboard.docs.components.sections.DocsFooter
 import org.florisboard.docs.components.sections.DocsHeader
 import org.florisboard.docs.components.sections.DocsMenu
-import org.jetbrains.compose.web.dom.B
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.H1
-import org.jetbrains.compose.web.dom.Main
-import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Span
-import org.jetbrains.compose.web.dom.Text
+import org.jetbrains.compose.web.attributes.InputType
+import org.jetbrains.compose.web.dom.*
+import org.w3c.dom.HTMLInputElement
 
 @Layout
 @Composable
 fun DocsLayout(ctx: PageContext, content: @Composable () -> Unit) {
     LaunchedEffect(ctx.route.path) {
         js("Prism.highlightAll()")
+        document.querySelector("#docs-menu-state")?.let {
+            (it as? HTMLInputElement)?.checked = false
+        }
     }
+    Input(type = InputType.Checkbox, attrs = {
+        id("docs-menu-state")
+    })
 
     DocsHeader()
 

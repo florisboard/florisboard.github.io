@@ -12,6 +12,16 @@ fun DocsHeader() {
     Header(attrs = { classes("container-lg") }) {
         Nav {
             Ul {
+                Li(attrs = { id("docs-menu-hamburger") }) {
+                    Label(forId = "docs-menu-state") {
+                        Span(attrs = { classes("unchecked") }) {
+                            BootstrapIcon("list")
+                        }
+                        Span(attrs = { classes("checked") }) {
+                            BootstrapIcon("x-lg")
+                        }
+                    }
+                }
                 Li {
                     Anchor(href = "/", attrs = { classes("logo") }) {
                         Img(src = "/assets/images/Stable_RSquare.png", attrs = { width(48) })

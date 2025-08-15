@@ -135,6 +135,9 @@ main {
     grid-template-columns: var(--aside-width) auto var(--aside-width);
     column-gap: 3rem;
 }
+#docs-menu-state, #docs-menu-hamburger {
+    display: none;
+}
 main > #docs-menu {
     grid-column: 1;
     grid-row: 1 / span 10000000; /* TODO: is there a better way than this?? */
@@ -206,6 +209,37 @@ main aside nav li a[aria-current="page"] {
         grid-column: 1;
     }
     #docs-menu, #table-of-contents {
+        display: none;
+    }
+    #docs-menu-hamburger {
+        display: block;
+        font-size: 1.5rem;
+    }
+    #docs-menu-hamburger label {
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+    #docs-menu-hamburger label .unchecked {
+        display: block;
+    }
+    #docs-menu-hamburger label .checked {
+        display: none;
+    }
+    #docs-menu-state:checked ~ header #docs-menu-hamburger label .unchecked {
+        display: none;
+    }
+    #docs-menu-state:checked ~ header #docs-menu-hamburger label .checked {
+        display: block;
+    }
+    #docs-menu-state:checked ~ main #docs-menu {
+        display: block;
+    }
+    #docs-menu-state:checked ~ main #docs-menu nav {
+        position: relative;
+        width: 100%;
+    }
+    #docs-menu-state:checked ~ main #content {
         display: none;
     }
 }
